@@ -1,0 +1,163 @@
+body{
+      background-color: #cfd2e1; /* fundo leve */
+}
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Caixa do login */
+.login-box {
+  background-color: #1f2345; /* cor escura */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Título */
+.login-title {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.login-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-form input:focus {
+  box-shadow: 0 0 0 2px #5671ff;
+}
+
+/* Botão */
+.login-form button {
+  background-color: #5671ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-form button:hover {
+  background-color: #4358cc;
+}
+
+/* Texto inferior */
+.signup-text {
+  color: #bbb;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #6a8bff;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 94%;
+  padding-right: 10px;
+}
+
+/* BOTÃO DO OLHO (ícone) */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent !important;  /* sem fundo */
+  border: none !important;             /* sem borda */
+  padding: 0;                          /* sem padding */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;                      /* cinza */
+  cursor: pointer;
+  font-size: 20px;                     /* tamanho do ícone */
+}
+
+.toggle-password:hover {
+  color: #5671ff;
+}
+
+/* BOTÃO PRINCIPAL: use uma classe dedicada */
+.submit-btn {
+  background-color: #5671ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #4358cc;
+}
+
+/* container do erro (para animar altura e opacidade) */
+.error-wrapper {
+  height: auto;
+  min-height: 0;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+/* quando NÃO há erro (colapsa o espaço) */
+.error-wrapper.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+/* quando o erro aparece */
+.error-wrapper.visible {
+  max-height: 40px; /* espaço ocupado pela mensagem */
+  opacity: 1;
+  margin-top: 5px;
+}
+
+/* texto interno */
+.error-text {
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: center;
+  transition: opacity 0.8s ease-in-out;
+  margin: 0;
+}
+
+.error-text.fade-out {
+  opacity: 0;
+}
+
+

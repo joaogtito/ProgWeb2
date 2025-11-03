@@ -1,0 +1,72 @@
+.register-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfd2e1; /* igual à tela de login */
+}
+
+.register-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.register-box {
+  background-color: #1f2345;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+.register-box input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+
+.register-box input:focus {
+  box-shadow: 0 0 0 2px #5671ff;
+}
+
+.register-box button {
+  background-color: #5671ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 40%;
+  transition: background 0.2s;
+  display: block;
+  margin: 10px auto; /* ← centraliza o botão */
+}
+
+
+.register-box button:hover {
+  background-color: #4358cc;
+}
+
+.login-link {
+  color: #bbb;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.login-link a {
+  color: #6a8bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

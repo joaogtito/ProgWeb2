@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // 🔹 Relações
+  posts        Post[]    @relation("UserPosts")  // ❌ sem onDelete aqui
+  comments     Comment[] // ❌ sem onDelete aqui
+}
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  content   String    @db.VarChar(256)
+  createdAt DateTime  @default(now())
+  authorId  Int
+
+  // 🔹 Relações
+  author    User      @relation("UserPosts", fields: [authorId], references: [id], onDelete: Cascade) // ✅ onDelete aqui
+  comments  Comment[] // ❌ sem onDelete aqui
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String   @db.VarChar(256)
+  createdAt DateTime @default(now())
+
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)   // ✅ certo
+
+  authorId  Int
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade) // ✅ certo
+}
